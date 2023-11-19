@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(30deg, #1c1b05, #09101e);
+  overflow: hidden;
+}
+.moon {
+  position: relative;
+  width: 456px;
+  height: 456px;
+  border-radius: 50%;
+  background: linear-gradient(30deg, #13223f, #000000);
+
+}
+.moon::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ded826;
+  animation: 3.2s cresent linear infinite alternate;
+  z-index: -1;
+  display: block;
+}
+@keyframes cresent {
+  0% {
+    transform: translate(-30px, 30px) scale(0.9);
+    box-shadow: none;
+  }
+  50% {
+    transform: translate(0px, 0px) scale(1.02);
+    box-shadow: 0 0 10px #f9f3f2, 0 0 80px 8px #ded826;
+  }
+  100% {
+    transform: translate(30px, -30px) scale(0.9);
+    box-shadow: none;
+  }
+}
